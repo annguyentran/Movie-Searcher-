@@ -1,0 +1,32 @@
+* {
+
+}
+
+
+#appDescriptionTitle {
+
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+#movieTitle {
+    text-align: center;
+    margin: 2%;
+    font-size: xxx-large;
+}
+
+#button {
+    width: 10%;
+    height: 20px;
+}
+
+#dataContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+
+
+}
+
