@@ -12,13 +12,13 @@
 
 <body class="has-background-black is-fullheight">
 
-    <div class="size-is-4 has-background-light has-text-centered">
-        <header class="hero has-text-dark has-text-weight-bold is-size-1" id="movieTitle">Movie Search App</header>
+    <div class="header-box size-is-4 has-background-light has-text-centered">
+        <header class="header-text hero has-text-dark has-text-weight-bold is-size-1 is-flex-direction-row is-justify-content-center" id="movieTitle">Movie Search App</header>
     </div>
 
     <div class="mt-6" id="appDescriptionTitle">
-        <p class="is-size-3 has-text-weight-bold has-text-centered">App Description:</p>
-        <p class="is-size-4 has-text-centered has-text-weight-semibold">Here you can search for any movie in the between the years of 2010-2020. A description of the movie
+        <p class="is-size-3 has-text-weight-bold has-text-centered has-text-light">App Description:</p>
+        <p class="is-size-4 has-text-centered has-text-weight-semibold has-text-light">Here you can search for any movie in the between the years of 2010-2020. A description of the movie
             will appear and its avalible streaming services appear will in the boxes below.
         </p>
     </div>
@@ -27,17 +27,18 @@
         <input class="" type="text">
     </div>
     <div class="has-text-centered">
-        <button class="button is-medium" id="button">Search</button>
+        <button class="button is-small" id="button">Search</button>
     </div>
     
-    <div id="dataContainer">
-        <p id="movieDetails"> Movie Description:</p>
-        <p id="ratings">Streaming Services:</p>
-        <img id='movieImage' src="download.png" alt="">
-    </div>
-
-
-
+    <div class="Data-container" id="dataContainer">
+        <div class="details-container">
+            <img id='movieImage' src="download.png" alt="">
+            <p id="movieDetails"> Movie Description:</p>
+        </div>
+        <div class="stream-box">
+            <p id="streams">Streaming Services:</p>
+        </div>
+    <div>
 
 </body>
 
