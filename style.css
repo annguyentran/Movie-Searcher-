@@ -3,11 +3,11 @@
 }
 
 body {
-    height: 100vh;
+    
 }
 
 .header-box {
-    height: 12%;
+   
 }
 
 .Data-container {
@@ -25,9 +25,15 @@ body {
 }
 #streams {
     border: 1px solid red;
+    width: 50%;
 }
 
 
 .details-container {
     margin-right: 50%;
+}
+
+#container-columns {
+    display: flex;
+    width: 50%;
 }
