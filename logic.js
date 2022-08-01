@@ -6,6 +6,7 @@ var movieTitle = document.getElementById("searchButton")
 var movieInputEl = document.getElementById("movie")
 var apiKey = "50df99c2"
 
+
 function getMovie() {
 var userInput = movieInputEl.value.toLowerCase().trim()
 const spacesReplaced = userInput.replace(/ /g, '+');
@@ -25,6 +26,7 @@ fetch(apiURL)
 searchButton.addEventListener('click', function(event) {
 event.preventDefault()
 getMovie()
+console.log(movieTitle)
 }) 
 
 
