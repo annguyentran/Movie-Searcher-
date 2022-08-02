@@ -44,11 +44,16 @@ body {
     text-decoration: underline;
 }
 
-.box-border {
-    border-right: 2px solid rgb(77, 77, 77);
-    margin-right: 10px;
-}
+
 
 .stream-wrap {
     word-wrap: break-word;
+    border-top: 4px solid rgb(95, 95, 95);
+    padding-top: 50px;
 }
+
+.stream-services-title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
