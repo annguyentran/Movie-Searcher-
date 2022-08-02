@@ -95,23 +95,14 @@ function displayPicture(data) {
 
 
 
-<<<<<<< HEAD
-
-searchButton.addEventListener('click', function(event) {
-=======
-searchButton.addEventListener('click', function (event) {
->>>>>>> 1b7ed0323d83982fdd35577f5d68d392796d51a2
-    event.preventDefault()
-    getMovie()
-
-})
-
-
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
     getMovie()
 
 })
+
+
+
 
 
 
