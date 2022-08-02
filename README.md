@@ -13,7 +13,7 @@ As a user when searching for a movie title, I get the details and description of
 
 The following screenshot shows the web application's appearance and functionality:
 
-![movie search app demo](./movie-search-screenshot.png)
+![movie search app demo](./movie-search-app-screenshot.png)
 
 ## Deployed Link 
 
