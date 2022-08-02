@@ -8,115 +8,107 @@ var apiKey = "50df99c2"
 
 
 function getMovie() {
-var userInput = movieInputEl.value.toLowerCase().trim()
-const spacesReplaced = userInput.replace(/ /g, '+');
+    var userInput = movieInputEl.value.toLowerCase().trim()
+    const spacesReplaced = userInput.replace(/ /g, '+');
 
-console.log(spacesReplaced)
+    console.log(spacesReplaced)
 
-var apiURL = "https://www.omdbapi.com/?t="+userInput+"&apikey="+apiKey
+    var apiURL = "https://www.omdbapi.com/?t=" + userInput + "&apikey=" + apiKey
 
-fetch(apiURL)
-.then(function(response){
-    console.log(response)
-    return response.json()
-})
-.then(function(data){
-    console.log(data) 
-    displayMovieDetails(data)
-})
+    fetch(apiURL)
+        .then(function (response) {
+            console.log(response)
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            displayMovieDetails(data)
+        })
 }
-
-
 
 
 function displayMovieDetails(data) {
 
-var moviePlot= data.Plot
-var movieTitle = data.Title 
-var movieDate = data.Released 
+    var moviePlot = data.Plot
+    var movieTitle = data.Title
+    var movieDate = data.Released
 
-var movieTitleEl = document.getElementById("title").innerText = movieTitle 
-var movieDateEl = document.getElementById('released').innerText = movieDate 
-var moviePlotEl = document.getElementById("plot").innerText = moviePlot
+    var movieTitleEl = document.getElementById("title").innerText = movieTitle
+    var movieDateEl = document.getElementById('released').innerText = movieDate
+    var moviePlotEl = document.getElementById("plot").innerText = moviePlot
 
-var imdb_id = data.imdbID
+    var imdb_id = data.imdbID
 
-streamingOptions(imdb_id)
+    streamingOptions(imdb_id)
 
 }
 
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '99f78c7f21msh10fdc5f1f328442p189223jsn30ef56d2750a',
-		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '6f918b8759mshfa7194a6b3ca418p188bbajsn6f147a0f3c13',
+        'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+    }
 };
 
 
 function streamingOptions(imdb_id) {
 
+    fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + imdb_id + "&output_language=en", options)
+        .then(response => {
+            console.log(response)
+            return response.json()
+        })
 
-//for (i=0; i<streamingServices.length; i++){
-// fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
-// 	.then((response) => {
-//        console.log(response)  
-//        return response.json()
-//     })
-// 	.then(data => console.log(data))
-// 	.catch(err => console.error(err));
-
-fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id="+imdb_id+"&output_language=en", options)
-	.then(response => response.json())
-	.then(function (data) {
-        displayStream(data)
-        displayPicture(data)
-       console.log(data)
-    });
-    
-
-
-//}
+        .then(function (data) {
+            displayStream(data)
+            displayPicture(data)
+            console.log(data)
+        }).catch(err => console.log(err));
 
 }
 
 function displayStream(data) {
 
-var streamDisplay = document.getElementById('streams')
-var streamData = data.streamingInfo
-var streamDataStringify = JSON.stringify(streamData)
+    var streamDisplay = document.getElementById('streams')
+    var streamData = data.streamingInfo
+    var streamDataStringify = JSON.stringify(streamData)
 
-console.log(streamDataStringify)
+    if (Object.keys(streamData).length === 0) {
 
-streamDisplay.innerText = streamDataStringify
+        streamDisplay.innerText = "No streaming sites available (at least according to the API)"
 
-  
+    } else { 
+        
+        streamDisplay.innerText = streamDataStringify }
+
+
 }
 
 function displayPicture(data) {
 
-var pictureEl = document.getElementById('movieImage')
-var imageSource = data.posterURLs.original
-pictureEl.src = imageSource
+    var pictureEl = document.getElementById('movieImage')
+    var imageSource = data.posterURLs.original
+    pictureEl.src = imageSource
 
 }
 
 
 
+
 searchButton.addEventListener('click', function(event) {
-<<<<<<< HEAD
-event.preventDefault()
-getMovie()
-console.log(movieTitle)
-}) 
-=======
     event.preventDefault()
     getMovie()
     streamingOptions()
     
     }) 
->>>>>>> bb9add205a437833b8759bd405e2ca7d3e14b1e0
+
+searchButton.addEventListener('click', function (event) {
+    event.preventDefault()
+    getMovie()
+
+})
 
 
 
-    
+
