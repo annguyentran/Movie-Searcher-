@@ -6,6 +6,7 @@ var movieTitle = document.getElementById("searchButton")
 var movieInputEl = document.getElementById("movie")
 var apiKey = "50df99c2"
 
+
 function getMovie() {
     var userInput = movieInputEl.value.toLowerCase().trim()
     const spacesReplaced = userInput.replace(/ /g, '+');
@@ -99,6 +100,9 @@ searchButton.addEventListener('click', function (event) {
     getMovie()
 
 })
+
+
+
 
 
 

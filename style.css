@@ -2,6 +2,7 @@
 
 }
 
+
 body {
     
 }
@@ -14,17 +15,17 @@ body {
     margin-top: 5%;
     display: flex;
     justify-content: center;
-    border: 1px solid blue;
+
 }
 
 #movieImage {
-    border: 1px solid red;
+
 }
 #movieDetails {
-    border: 1px solid red;
+
 }
 #streams {
-    border: 1px solid red;
+
     width: 50%;
 }
 
@@ -36,4 +37,18 @@ body {
 #container-columns {
     display: flex;
     width: 50%;
+}
+
+.movie-title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.box-border {
+    border-right: 2px solid rgb(77, 77, 77);
+    margin-right: 10px;
+}
+
+.stream-wrap {
+    word-wrap: break-word;
 }
