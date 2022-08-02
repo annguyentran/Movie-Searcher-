@@ -26,8 +26,6 @@ function getMovie() {
 }
 
 
-
-
 function displayMovieDetails(data) {
 
     var moviePlot = data.Plot
@@ -55,27 +53,17 @@ const options = {
 
 function streamingOptions(imdb_id) {
 
-
-    //for (i=0; i<streamingServices.length; i++){
-    // fetch('https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&output_language=en&language=en', options)
-    // 	.then((response) => {
-    //        console.log(response)  
-    //        return response.json()
-    //     })
-    // 	.then(data => console.log(data))
-    // 	.catch(err => console.error(err));
-
     fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + imdb_id + "&output_language=en", options)
-        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            return response.json()
+        })
+
         .then(function (data) {
             displayStream(data)
             displayPicture(data)
             console.log(data)
-        });
-
-
-
-    //}
+        }).catch(err => console.log(err));
 
 }
 
@@ -85,9 +73,13 @@ function displayStream(data) {
     var streamData = data.streamingInfo
     var streamDataStringify = JSON.stringify(streamData)
 
-    console.log(streamDataStringify)
+    if (Object.keys(streamData).length === 0) {
 
-    streamDisplay.innerText = streamDataStringify
+        streamDisplay.innerText = "No streaming sites available (at least according to the API)"
+
+    } else { 
+        
+        streamDisplay.innerText = streamDataStringify }
 
 
 }
@@ -105,9 +97,9 @@ function displayPicture(data) {
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
     getMovie()
-    streamingOptions()
 
 })
+
 
 
 
