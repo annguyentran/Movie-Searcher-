@@ -46,7 +46,7 @@ function displayMovieDetails(data) {
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '6f918b8759mshfa7194a6b3ca418p188bbajsn6f147a0f3c13',
+        'X-RapidAPI-Key': '99f78c7f21msh10fdc5f1f328442p189223jsn30ef56d2750a',
         'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
 };
