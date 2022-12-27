@@ -1,4 +1,4 @@
-# Project-1
+# Movie Searcher 
 
 This interactive application allows the user to search for any movie tile and get the movie details; year of release, summary of the plot, and poster. It also shows the different streaming platforms where the movie is available to watch, as well as a link to access it. 
 
