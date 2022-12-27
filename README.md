@@ -19,5 +19,5 @@ The following screenshot shows the web application's appearance and functionalit
 
 The application can be found at the following link:
 
-[Deployed-link] (https://annguyentran.github.io/Project-1-/)
+[Deployed-link] (https://annguyentran.github.io/Movie-Searcher-/)
 
